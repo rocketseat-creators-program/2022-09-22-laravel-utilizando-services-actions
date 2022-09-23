@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\UserToggleActiveController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -12,7 +13,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/users/{id}/toggle-active', [UsersController::class, 'toggleActive'])->name('users.toggle-active');
+//    Route::get('/users/{id}/toggle-active', [UsersController::class, 'toggleActive'])->name('users.toggle-active');
+    Route::get('/users/{id}/toggle-active', UserToggleActiveController::class)->name('users.toggle-active');
     Route::get('/users', [UsersController::class, 'index'])->name('users.index');
 });
 

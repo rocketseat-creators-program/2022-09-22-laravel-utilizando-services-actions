@@ -14,12 +14,33 @@ class UsersController
         return view('users.index', compact('users'));
     }
 
-    public function toggleActive($id)
+    public function show($id)
     {
-        $user = User::findOrFail($id);
-        $user->active = !$user->active;
-        $user->save();
 
-        return redirect()->route('users.index');
+    }
+
+    public function create()
+    {
+
+    }
+
+    public function store(Request $request)
+    {
+
+    }
+
+    public function edit($id)
+    {
+
+    }
+
+    public function update(Request $request, $id)
+    {
+
+    }
+
+    public function destroy($id)
+    {
+
     }
 }
